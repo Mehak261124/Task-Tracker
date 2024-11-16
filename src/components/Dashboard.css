@@ -1,0 +1,302 @@
+/* Dashboard Container Styling */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  transition: filter 0.3s ease-in-out;
+  position: relative;
+  box-sizing: border-box; /* Added to include padding and border in total width */
+}
+
+.dashboard.blurred {
+  filter: blur(5px);
+}
+
+/* Header Styling */
+h1, h2 {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 15px;
+}
+
+/* Task Creation and Task Management */
+.task-creation, .task-management {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox for input field alignment */
+.task-creation, .edit-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-creation input,
+.task-creation textarea,
+.task-creation select,
+.task-creation button,
+.edit-modal input,
+.edit-modal textarea,
+.edit-modal select {
+  width: 50%; /* Ensure all form elements take full width */
+  max-width: 100%; /* Ensure they don't overflow */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+input[type="text"],
+input[type="date"] {
+  margin-right: 0; /* Remove margin-right to avoid overflow */
+}
+
+/* Task Creation Textarea */
+.task-creation textarea {
+  resize: vertical;
+}
+
+/* Task Creation Button */
+.task-creation button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.task-creation button:hover {
+  background-color: #0056b3;
+}
+
+/* Task Management Dropdown */
+.task-management select {
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 50%;
+  max-width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  border: 1px solid #ddd;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: transform 0.2s ease-in-out;
+}
+
+.task-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-list li h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.task-list li p {
+  font-size: 14px;
+  color: #555;
+}
+
+.task-list li button {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.task-list li button:hover {
+  background-color: #218838;
+}
+
+.task-list li button:last-of-type {
+  background-color: #dc3545;
+}
+
+.task-list li button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+/* Edit Modal */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal background is on top */
+}
+
+.edit-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px; /* Adjust the width as necessary */
+  z-index: 1001; /* Ensure the modal is on top of the background */
+}
+
+/* Modal Form Inputs */
+.edit-modal input,
+.edit-modal textarea,
+.edit-modal select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Edit Modal Button */
+.edit-modal button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.edit-modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal close button */
+.edit-modal button:last-of-type {
+  background-color: #dc3545;
+}
+
+.edit-modal button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .task-creation, .task-management {
+    padding: 15px;
+  }
+
+  .task-creation input,
+  .task-creation textarea,
+  .task-creation select,
+  .task-creation button,
+  .edit-modal input,
+  .edit-modal textarea,
+  .edit-modal select {
+    width: 50%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .task-list li {
+    padding: 15px;
+  }
+
+  .task-list li h3 {
+    font-size: 16px;
+  }
+
+  .task-list li button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 10px;
+  }
+
+  .task-creation input,
+  .task-creation textarea,
+  .task-creation select,
+  .task-creation button,
+  .edit-modal input,
+  .edit-modal textarea,
+  .edit-modal select {
+    padding: 8px;
+  }
+
+  .task-list li {
+    padding: 12px;
+  }
+
+  .task-list li h3 {
+    font-size: 14px;
+  }
+
+  .task-list li button {
+    padding: 6px 10px;
+  }
+}
+
+.timer-icon {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.time-left-box {
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  margin-right: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-timer {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
